@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Memories — A Birthday Tribute</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+  </div>
+
+  <header class="hud" aria-label="Site controls">
+    <div class="brand">
+      <span class="brand__glow">Midnight</span>
+      <span class="brand__dot">•</span>
+      <span class="brand__glow">Memories</span>
+    </div>
+
+    
+  </header>
+
+  <main class="wrap" id="wrap">
+    <!-- Scene 1: Cinematic Intro -->
+    <section class="scene" data-scene="1" aria-label="Cinematic intro">
+      <div class="scene__inner">
+        <div class="intro">
+          <div class="intro__chip" data-animate="reveal">PRADEEP</div>
+          <h1 class="intro__title" data-animate="glowPulse">
+           HAPPY BIRTHDAY MAVVAYA
+          </h1>
+          <p class="intro__subtitle" data-animate="fadeUp">
+            HOPE THIS DAY IS AS AMAZING AS YOU ARE! THANK YOU FOR BEING THE BEST UNCLE EVER.
+          </p>
+          <div class="intro__hint" data-animate="fadeUp" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="hintText">Scroll</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 2: Memory Gallery -->
+    <section class="scene" data-scene="2" aria-label="Memory gallery">
+      <div class="scene__inner">
+        <div class="sectionHead" data-animate="fadeUp">
+          <div class="kicker">Memory Gallery</div>
+          <h2 class="sectionTitle"></h2>
+          <p class="sectionDesc"></p>
+        </div>
+
+        <div class="cards" data-animate="stagger">
+          <article class="card" tabindex="0">
+            <div class="card__media">
+              <div class="imgPlaceholder img1" aria-hidden="true">
+                <img class="card__photo" src="thattya.jpeg" alt="Thattya" />
+              </div>
+              <div class="card__shine" aria-hidden="true"></div>
+            </div>
+            <h3 class="card__title">BEHIND EVERY HAPPY FAMILY IS A SON WHO CARES DEEPLY  </h3>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="card__media">
+              <div class="imgPlaceholder img2" aria-hidden="true">
+                <img class="card__photo" src="me.jpeg" alt="Thattya" />
+              </div>
+              <div class="card__shine" aria-hidden="true"></div>
+            </div>
+            <h3 class="card__title">FOREVER BEST GUIDE</h3>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="card__media">
+              <div class="imgPlaceholder img3" aria-hidden="true">
+                <img class="card__photo" src="pra.jpeg" alt="Thattya" />
+              </div>
+              <div class="card__shine" aria-hidden="true"></div>
+            </div>
+            <h3 class="card__title">GREAT FATHER</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 3: Emotional Quote Sequence -->
+    <section class="scene" data-scene="3" aria-label="Emotional quote sequence">
+      <div class="scene__inner">
+        <div class="quoteStage">
+          <div class="sectionHead" data-animate="fadeUp">
+            <div class="kicker">SOME LINES FOR YOU</div>
+            <h2 class="sectionTitle"> </h2>
+          </div>
+
+          <div class="quoteBox" role="status" aria-live="polite">
+            <div class="quoteLine" id="quoteLine1">Not all heroes wear capes…</div>
+            <div class="quoteLine" id="quoteLine2">Some simply protect their family every day.</div>
+            <div class="quoteLine" id="quoteLine3">Thank you for every smile, lesson, and memory.</div>
+            <div class="quoteFinal" id="quoteFinal">Happy Birthday MAVVYA ❤️</div>
+
+            <div class="quoteProgress" aria-hidden="true">
+              <span class="quoteDot" data-idx="1"></span>
+              <span class="quoteDot" data-idx="2"></span>
+              <span class="quoteDot" data-idx="3"></span>
+              <span class="quoteDot" data-idx="4"></span>
+            </div>
+          </div>
+
+          <p class="fineprint">JUS BE AS YOU ARE</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 4: Birthday Message -->
+    <section class="scene" data-scene="4" aria-label="Birthday wishes">
+      <div class="scene__inner">
+        <div class="messageStage">
+          <div class="sectionHead" data-animate="fadeUp">
+            <div class="kicker">Birthday Message</div>
+            <h2 class="sectionTitle">ONCE AGAIN HAPPY BIRTHDAY</h2>
+          </div>
+
+          <div class="typeWrap" data-animate="fadeUp">
+            <div class="typeLabel">WISH</div>
+            <div class="typewriter" aria-label="Typewriter message">
+              <span id="typeText"></span>
+              <span class="cursor" aria-hidden="true">|</span>
+            </div>
+          </div>
+
+          <div class="ctaRow" data-animate="fadeUp">
+            <button class="btn btn--primary" id="replayBtn" type="button">Replay Intro</button>
+            <a class="btn btn--ghost" href="#wrap" id="toTop" aria-label="Back to top">
+              Back to Scenes
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scene 5: Cinematic Ending -->
+    <section class="scene" data-scene="5" aria-label="Cinematic ending">
+      <div class="scene__inner">
+        <div class="ending" data-animate="fadeUp">
+          <div class="ending__title">A beautiful soul deserves beautiful memories.</div>
+          <div class="ending__collage" aria-hidden="true">
+            <div class="collageTile t1"><img src="attha2.jpeg" alt="Attha" class="collage__img" /></div>
+            <div class="collageTile t2"><img src="deep.jpeg" alt="Deep" class="collage__img" /></div>
+            <div class="collageTile t3"><img src="fam.jpeg" alt="Family" class="collage__img" /></div>
+            <div class="collageTile t4"><img src="prafam.jpeg" alt="Pra Family" class="collage__img" /></div>
+            <div class="collageTile t5"><img src="nanna.jpeg" alt="Nanna" class="collage__img" /></div>
+            <div class="collageTile t6"><img src="cousin.jpeg" alt="Cousin" class="collage__img" /></div>
+          </div>
+
+          <div class="ending__actions">
+            <button class="btn btn--primary" id="replayAll" type="button">Watch Again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bgm" preload="auto" loop>
+    <source src="assets/music/ambient-lofi.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
